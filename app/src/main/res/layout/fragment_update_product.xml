@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".ui.product.detail.ProductDetailFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/productNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ProductName"
+            android:textAlignment="center"
+            android:textSize="35sp" />
+
+        <Button
+            android:id="@+id/saveProductButton"
+            android:layout_width="49dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/baseline_edit_24" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp">
+
+        <TextView
+            android:id="@+id/barcodeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1111111111111"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/editBarcodeButton"
+            android:layout_width="51dp"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_menu_camera" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <Spinner
+            android:id="@+id/categorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:id="@+id/warehouseSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginVertical="15dp">
+
+        <EditText
+            android:id="@+id/unitText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/quantityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:id="@+id/descriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="none"
+            android:gravity="start"
+            android:lineSpacingExtra="4dp"
+            android:maxLines="10"
+            android:padding="16dp"
+            android:text="description"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</TableLayout>

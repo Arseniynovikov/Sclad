@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/productListFragment">
+
+    <action
+        android:id="@+id/action_global_nav_warehouse"
+        app:destination="@id/warehouseListFragment"/>
+    <action
+        android:id="@+id/action_global_nav_product"
+        app:destination="@+id/productListFragment"/>
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.example.sklad.ui.product.list.ProductListFragment"
+        android:label="Продукты"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_productUpdateFragment"
+            app:destination="@id/productUpdateFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_productAddFragment"
+            app:destination="@id/productAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.sklad.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.sklad.ui.product.detail.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="product"
+            app:argType="com.example.sklad.domain.models.ProductModel"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_productUpdateFragment"
+            app:destination="@id/productUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productUpdateFragment"
+        android:name="com.example.sklad.ui.product.update.ProductUpdateFragment"
+        android:label="ProductUpdateFragment"
+        tools:layout="@layout/fragment_update_product">
+        <argument
+            android:name="product"
+            app:argType="com.example.sklad.domain.models.ProductModel"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_productUpdateFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productAddFragment"
+        android:name="com.example.sklad.ui.product.add.ProductAddFragment"
+        android:label="ProductAddFragment"
+        tools:layout="@layout/fragment_product_add">
+        <action
+            android:id="@+id/action_productAddFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/warehouseListFragment"
+        android:name="com.example.sklad.ui.warehouse.list.WarehouseListFragment"
+        android:label="fragment_warehouse_list"
+        tools:layout="@layout/fragment_warehouse_list" >
+        <action
+            android:id="@+id/action_warehouseListFragment_to_warehouseDetailFragment"
+            app:destination="@id/warehouseDetailFragment" />
+        <action
+            android:id="@+id/action_warehouseListFragment_to_warehouseAddFragment"
+            app:destination="@id/warehouseAddFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/warehouseDetailFragment"
+        android:name="com.example.sklad.ui.warehouse.detail.WarehouseDetailFragment"
+        android:label="fragment_warehouse_detail"
+        tools:layout="@layout/fragment_warehouse_detail" >
+        <argument
+            android:name="product"
+            app:argType="com.example.sklad.domain.models.WarehouseModel"
+            app:nullable="false"/>
+        <action
+            android:id="@+id/action_warehouseDetailFragment_to_warehouseAddFragment"
+            app:destination="@id/warehouseAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/warehouseAddFragment"
+        android:name="com.example.sklad.ui.warehouse.add.WarehouseAddFragment"
+        android:label="fragment_warehouse_add"
+        tools:layout="@layout/fragment_warehouse_add" >
+        <action
+            android:id="@+id/action_warehouseAddFragment_to_warehouseListFragment"
+            app:destination="@id/warehouseListFragment" />
+    </fragment>
+
+</navigation>
